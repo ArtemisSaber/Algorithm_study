@@ -1,0 +1,21 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Studying all kinds of algorithm ## Fibonacci sequence     F(n)=F(n-1)+F(n-2)     Due to extra large number exceeding Javascript precision limit, I used an array add algorithm to deal with it and successfully eliminated unwelcomed precision loss",
+  "main": "fibonacci.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --max-old-space-size=16384 ./fibonacci.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemisSaber/Algorithm_study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/ArtemisSaber/Algorithm_study/issues"
+  },
+  "homepage": "https://github.com/ArtemisSaber/Algorithm_study#readme"
+}
