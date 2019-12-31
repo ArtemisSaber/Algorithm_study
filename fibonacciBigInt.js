@@ -50,7 +50,7 @@ var arrayAdd = (op1Array, op2Array) => {
 var calcFibonacci = index => {
 	return new Promise((resolve, reject) => {
 		console.time("FibonacciAsync")
-		let fibonacciArray = [[0], [1]]
+		let fibonacciArray = [0n, 1n]
 		let result = fibonacciAsync(index, fibonacciArray)
 		result.then(res => {
 			resolve(res)
@@ -77,10 +77,7 @@ const fibonacciAsync = (index, array) => {
 				if (array[index]) {
 					resolve(array[index])
 				} else {
-					let next = arrayAdd(
-						array[array.length - 1],
-						array[array.length - 2]
-					)
+					let next = array[array.length - 1]+array[array.length - 2]
 					array.push(next)
 					resolve(fibonacciAsync(index, array))
 				}
@@ -110,14 +107,14 @@ if (process.argv[3] === "async") {
 	console.log(`Calculating ${desiredIndex}th of fibonacci sequence`)
 	calcFibonacci(desiredIndex)
 		.then(res => {
-			let fibonacciNumber = []
-			fibonacciNumber = res.reverse()
-			let fibonacciNumberStr = ""
-			fibonacciNumber.forEach(num => {
-				fibonacciNumberStr += num.toString()
-			})
+			// let fibonacciNumber = []
+			// fibonacciNumber = res.reverse()
+			// let fibonacciNumberStr = ""
+			// fibonacciNumber.forEach(num => {
+			// 	fibonacciNumberStr += num.toString()
+			// })
 			console.log(
-				`The ${desiredIndex}th of fibonacci sequence is ${fibonacciNumberStr}`
+				`The ${desiredIndex}th of fibonacci sequence is ${res.toString()}`
 			)
 		})
 		.catch(reason => {
